@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(39, 39, 39);
+    color: white;
+    padding: 0.5rem;
+}
+
+.container-false {
+    display: none;
+}
+
+.container-true {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+.calendar-header p {
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.views{
+    width: min-content;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: rgb(197, 197, 197);
+}
+.views p{
+    cursor: pointer;
+}
+.views .selected{
+    color: #007bff;
+}
+.days-week {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(40px, 1fr));
+    width: 100%;
+    margin-bottom: 10px;
+    gap: 3%;
+}
+.days-week span{
+    overflow: hidden;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(40px, 1fr));
+    width: 100%;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.calendar-grid span {
+    cursor: pointer;
+    transition: all 0.2s;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+.calendar-grid span:hover {
+    background-color: lightgray;
+}
+
+.calendar-grid .empty {
+    pointer-events: none;
+}
+.disabled {
+    color: rgb(120, 120, 120);
+    pointer-events: none;
+}
+.calendar-grid .selected {
+    background-color: lightblue;
+    color: black;
+    border-radius: 50%;
+    font-weight: bold;
+}
+.calendar-grid .today {
+    background-color: rgba(0, 123, 255, 0.2); 
+    color: #007bff; 
+    font-weight: bold; 
+    border: 2px solid #007bff; 
+    border-radius: 50%; 
+    transition: all 0.2s ease-in-out;
+}
+
+.calendar-grid .today:hover {
+    background-color: #007bff; 
+    color: white;
+    transform: scale(1.1); 
+}
+.view-years {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(80px, 1fr));
+    gap: 10px;
+}
+.view-years span{
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+    border-radius: 50%;
+
+}
+.view-years span:hover {
+    background-color: lightgray;
+
+}
